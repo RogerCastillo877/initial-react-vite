@@ -3,6 +3,8 @@ import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 
 import logo from '../assets/react.svg';
 
+import { LoginScreen, RegisterScreen, ProtectedPage } from '../MainModule/pages';
+
 export const Navigation = () => {
   return (
     <BrowserRouter>
@@ -12,23 +14,23 @@ export const Navigation = () => {
 
           <ul>
             <li>
-              <NavLink to="/home" className={({ isActive }) => isActive ? 'nav-active' : ''}>Home</NavLink>
+              <NavLink to="/login" className={({ isActive }) => isActive ? 'nav-active' : ''}>Login</NavLink>
             </li>
             <li>
-              <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-active' : ''}>About</NavLink>
+              <NavLink to="/register" className={({ isActive }) => isActive ? 'nav-active' : ''}>Register</NavLink>
             </li>
             <li>
-              <NavLink to="/users" className={({ isActive }) => isActive ? 'nav-active' : ''}>Users</NavLink>
+              <NavLink to="/protected" className={({ isActive }) => isActive ? 'nav-active' : ''}>Protected</NavLink>
             </li>
           </ul>
         </nav>
 
         <Routes>
-          <Route path='/about' element={<h1>About</h1>}></Route>
-          <Route path='/users' element={<h1>Users</h1>}></Route>
-          <Route path='/home' element={<h1>Home</h1>}></Route>
+          <Route path='/protected' element={<ProtectedPage />}></Route>
+          <Route path='/register' element={<RegisterScreen />}></Route>
+          <Route path='/login' element={<LoginScreen />}></Route>
 
-          <Route path='/*' element={<Navigate to="/home" replace />}></Route>
+          <Route path='/*' element={<Navigate to="/login" replace />}></Route>
         </Routes>
       </div>
     </BrowserRouter>
