@@ -11,9 +11,9 @@ interface Route {
   children?: Route[];
 }
 
-const Login = lazy(() => import(/* webpackChunkName: "LazyPage" */'../MainModule/pages/LoginScreen'));
-const Register = lazy(() => import(/* webpackChunkName: "LazyPage" */'../MainModule/pages/RegisterScreen'));
-const Protected = lazy(() => import(/* webpackChunkName: "LazyPage" */'../MainModule/pages/ProtectedPage'));
+const Login = lazy(() => import(/* webpackChunkName: "LazyLogin" */ '../MainModule/pages/LoginScreen'));
+const Register = lazy(() => import(/* webpackChunkName: "LazyRegister" */ '../MainModule/pages/RegisterScreen'));
+const Protected = lazy(() => import(/* webpackChunkName: "LazyProtected" */ '../MainModule/pages/ProtectedPage'));
 
 export const routes: Route[] = [
   {
