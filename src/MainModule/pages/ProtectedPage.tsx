@@ -1,8 +1,8 @@
 
-const ProtectedPage = () => {
+export const ProtectedPage = () => {
   return (
     <div>ProtectedPage</div>
   )
 }
 
-export default ProtectedPage;
+// export default ProtectedPage;

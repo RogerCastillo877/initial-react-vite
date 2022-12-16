@@ -33,7 +33,7 @@ export const Navigation = () => {
               ))
             }
 
-            <Route path='/*' element={<Navigate to="/login" replace />}></Route>
+            <Route path='/*' element={<Navigate to={routes[0].to} replace />}></Route>
           </Routes>
         </div>
       </BrowserRouter>

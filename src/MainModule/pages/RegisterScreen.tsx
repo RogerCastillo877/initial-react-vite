@@ -1,8 +1,8 @@
 
-const RegisterScreen = () => {
+export const RegisterScreen = () => {
   return (
     <div>RegisterScreen</div>
   )
 }
 
-export default RegisterScreen;
+// export default RegisterScreen;
