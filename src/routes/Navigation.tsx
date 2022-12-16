@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
+import { routes } from './routes';
 
 import logo from '../assets/react.svg';
 
@@ -13,22 +14,22 @@ export const Navigation = () => {
           <img src={logo} alt="React Logo" />
 
           <ul>
-            <li>
-              <NavLink to="/login" className={({ isActive }) => isActive ? 'nav-active' : ''}>Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/register" className={({ isActive }) => isActive ? 'nav-active' : ''}>Register</NavLink>
-            </li>
-            <li>
-              <NavLink to="/protected" className={({ isActive }) => isActive ? 'nav-active' : ''}>Protected</NavLink>
-            </li>
+            {
+              routes.map(({ to, name }) => (
+                <li key={to}>
+                  <NavLink to={to} className={({ isActive }) => isActive ? 'nav-active' : ''}>{name}</NavLink>
+                </li>
+              ))
+            }
           </ul>
         </nav>
 
         <Routes>
-          <Route path='/protected' element={<ProtectedPage />}></Route>
-          <Route path='/register' element={<RegisterScreen />}></Route>
-          <Route path='/login' element={<LoginScreen />}></Route>
+          {
+            routes.map(({ path, Component }) => (
+              <Route key={path} path={path} element={<Component />}></Route>
+            ))
+          }
 
           <Route path='/*' element={<Navigate to="/login" replace />}></Route>
         </Routes>
