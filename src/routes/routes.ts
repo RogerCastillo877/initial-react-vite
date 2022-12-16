@@ -1,8 +1,5 @@
-import { LazyExoticComponent } from 'react';
-import { lazy } from 'react';
-import { LoginScreen, ProtectedPage, RegisterScreen } from '../MainModule/pages';
-import { } from '../MainModule/pages/RegisterScreen';
-import { Route } from 'react-router-dom';
+import { lazy, LazyExoticComponent } from 'react';
+
 
 type JSXCOmponent = () => JSX.Element;
 
@@ -14,25 +11,27 @@ interface Route {
   children?: Route[];
 }
 
-// const LazyPage = lazy(() => import(/* webpackChunkName: "LazyPage" */'../routes/'))
+const Login = lazy(() => import(/* webpackChunkName: "LazyPage" */'../MainModule/pages/LoginScreen'));
+const Register = lazy(() => import(/* webpackChunkName: "LazyPage" */'../MainModule/pages/RegisterScreen'));
+const Protected = lazy(() => import(/* webpackChunkName: "LazyPage" */'../MainModule/pages/ProtectedPage'));
 
 export const routes: Route[] = [
   {
     to: '/login',
     path: 'login',
-    Component: LoginScreen,
+    Component: Login,
     name: 'Login'
   },
   {
     to: '/register',
     path: 'register',
-    Component: RegisterScreen,
+    Component: Register,
     name: 'register'
   },
   {
     to: '/protected',
     path: 'protected',
-    Component: ProtectedPage,
+    Component: Protected,
     name: 'protected'
   },
 ]
