@@ -1,0 +1,60 @@
+.productCard {
+    background-color: white;
+    border-radius: 1.5rem;
+    color: black;
+    padding-bottom: 0.5rem;
+    width: 25rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.productImg {
+    border-radius: 1.5rem 1.5rem 0rem 0rem;
+    width: 100%;
+}
+
+.productDescription {
+    margin: 1rem;
+}
+
+.buttonsContainer {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.buttonMinus {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0.1rem solid black;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+    font-size: 2rem;
+    width: 3rem;
+}
+
+.buttonMinus:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.countLabel {
+    border-bottom: 0.1rem solid black;
+    border-top: 0.1rem solid black;
+    font-size: 1.6rem;
+    height: 2.5rem;
+    padding-top: 0.5rem;
+    text-align: center;
+    width: 3rem;
+}
+
+.buttonAdd {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0.1rem solid black;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+    font-size: 2rem;
+    width: 3rem;
+}
+
+.buttonAdd:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
