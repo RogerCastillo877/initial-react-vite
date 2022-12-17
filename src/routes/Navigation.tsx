@@ -4,8 +4,7 @@ import { Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import { routes } from './routes';
 
 import logo from '../assets/react.svg';
-
-import { LoginScreen, RegisterScreen, ProtectedPage } from '../MainModule/pages';
+import { ShoppingPage } from '../patterns/pages/ShoppingPage';
 
 export const Navigation = () => {
   return (
@@ -23,6 +22,9 @@ export const Navigation = () => {
                   </li>
                 ))
               }
+              <li>
+                <NavLink to="/" className={({ isActive }) => isActive ? 'nav-active' : ''}>Shopping</NavLink>
+              </li>
             </ul>
           </nav>
 
@@ -33,6 +35,7 @@ export const Navigation = () => {
               ))
             }
 
+            <Route path='/' element={<ShoppingPage />}></Route>
             <Route path='/*' element={<Navigate to={routes[0].to} replace />}></Route>
           </Routes>
         </div>
