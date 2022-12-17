@@ -4,10 +4,6 @@ import { ProductContextProps, ProductCardProps } from '../interfaces/interfaces'
 
 import styles from '../styles/styles.module.css';
 
-import { ProductImage } from './ProductImage';
-import { ProductTitle } from './ProductTitle';
-import { ProductButtons } from './ProductButtons';
-
 export const productContext = createContext({} as ProductContextProps);
 
 const { Provider } = productContext
@@ -35,7 +31,3 @@ export const ProductCard = ({ children, product }: ProductCardProps) => {
     </Provider>
   )
 }
-
-ProductCard.Title = ProductTitle;
-ProductCard.Image = ProductImage;
-ProductCard.Buttons = ProductButtons;
