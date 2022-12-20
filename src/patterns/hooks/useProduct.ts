@@ -1,12 +1,20 @@
 import { useState } from 'react';
+import { Product, onChangeArgs } from '../interfaces/interfaces';
 
-export const useProduct = (onChange?: () => void) => {
+interface useProductArgs {
+  product: Product;
+  onChange: (arg: onChangeArgs) => void;
+}
+
+export const useProduct = ({ onChange, product }: useProductArgs) => {
 
   const [counter, setCounter] = useState(0)
 
   const increaseBy = (value: number) => {
-    setCounter(prev => Math.max(prev + value, 0))
-    onChange && onChange();
+
+    const newValue = Math.max(counter + value, 0)
+    setCounter(newValue);
+    onChange && onChange({ count: newValue, product });
   };
 
   return {
